@@ -287,4 +287,12 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0014-longest-common-prefix](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0014-longest-common-prefix) |
+## Quicksort
+|  |
+| ------- |
+| [0075-sort-colors](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0075-sort-colors) |
+## Bubble Sort
+|  |
+| ------- |
+| [0075-sort-colors](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0075-sort-colors) |
 <!---LeetCode Topics End-->
