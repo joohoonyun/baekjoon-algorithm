@@ -1,34 +1,33 @@
 class Solution {
-    // Dutch National Flag 알고리즘 사용
     fun sortColors(nums: IntArray): Unit {
-        var low: Int = 0
-        var mid: Int = 0
-        var high: Int = nums.size-1
-
-        while (mid <= high) {
-            when (nums[mid]) {
-                0 -> {
-                    swap(nums, low, mid)
-                    low++
-                    mid++
-                }
-
-                1 -> {
-                    mid++
-                }
-
-                2 -> {
-                    swap(nums, mid, high)
-                    high--
-                }
-            }
-        }
+        quickSort(0, nums.size-1, nums)     
     }
 
-    fun swap(nums: IntArray, a: Int, b: Int) {
-        var temp = nums[a]
+    fun quickSort(start: Int, end: Int, nums: IntArray): Unit {
+        if (start >= end) return
+        val pivotIdx = partition(start, end, nums)
+        
+        quickSort(start, pivotIdx-1, nums)
+        quickSort(pivotIdx+1, end, nums)
+    }
 
-        nums[a] = nums[b]
-        nums[b] = temp
+    fun partition(start: Int, end: Int, nums: IntArray): Int {
+        val pivot = nums[end]
+        var smallerIdx = start
+        for (curIdx: Int in start until end) {
+            if (pivot >= nums[curIdx]) {
+                swap(curIdx, smallerIdx, nums)
+                smallerIdx++        
+            }
+        }
+
+        swap(smallerIdx, end, nums)
+        return smallerIdx
+    }
+
+    fun swap(a: Int, b: Int, target: IntArray) {
+        var temp = target[a]
+        target[a] = target[b]
+        target[b] = temp
     }
 }
