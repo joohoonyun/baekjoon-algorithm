@@ -4,23 +4,24 @@ class Solution {
     }
 
     fun quickSort(start: Int, end: Int, nums: IntArray): Unit {
-        if (start > end) return
-        var pivotIdx = getPartition(start, end, nums)
-
+        if (start >= end) return
+        val pivotIdx: Int = getPartition(start, end, nums)
+        
         quickSort(start, pivotIdx-1, nums)
         quickSort(pivotIdx+1, end, nums)
     }
 
     fun getPartition(start: Int, end: Int, nums: IntArray): Int {
-        var pivot = nums[end]
+        val pivot: Int = nums[end]
         var smallerIdx = start
 
         for (curIdx: Int in start until end) {
             if (nums[curIdx] <= pivot) {
-                swap(curIdx, smallerIdx, nums)
-                smallerIdx++
+                swap(smallerIdx, curIdx, nums)
+                smallerIdx++;
             }
         }
+
         swap(smallerIdx, end, nums)
         return smallerIdx
     }
