@@ -13,19 +13,21 @@ class Solution {
 
     fun getPartition(start: Int, end: Int, nums: IntArray): Int {
         val pivot = nums[end]
-        var smallerIdx: Int = start
+        var smallerIdx = start
+
         for (curIdx: Int in start until end) {
             if (nums[curIdx] <= pivot) {
-                if (curIdx != smallerIdx) swap(smallerIdx, curIdx, nums)
+                swap(curIdx, smallerIdx, nums)
                 smallerIdx++
             }
         }
+
         swap(smallerIdx, end, nums)
-        return smallerIdx
+        return smallerIdx    
     }
 
-    fun swap(a: Int, b: Int, nums: IntArray) {
-        var temp = nums[a]
+    fun swap(a: Int, b: Int, nums: IntArray): Unit {
+        var temp: Int = nums[a]
         nums[a] = nums[b]
         nums[b] = temp
     }
