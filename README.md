@@ -157,6 +157,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## Math
 |  |
 | ------- |
+| [0009-palindrome-number](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0009-palindrome-number) |
 | [0062-unique-paths](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0062-unique-paths) |
 | [0070-climbing-stairs](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0070-climbing-stairs) |
 | [1146-greatest-common-divisor-of-strings](https://github.com/juhoon212/baekjoon-algorithm/tree/master/1146-greatest-common-divisor-of-strings) |
