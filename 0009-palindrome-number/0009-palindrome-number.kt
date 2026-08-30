@@ -1,14 +1,14 @@
 class Solution {
     fun isPalindrome(x: Int): Boolean {
-        val str: String = x.toString()
-        
-        val sb = StringBuilder()
-        for (i: Int in str.length-1 downTo 0) {
-            sb.append(str[i])
+        if (x < 0 || (x % 10 == 0 && x != 0)) return false
+        var number = x
+        var revertedNumber: Int = 0
+
+        while (number > revertedNumber) {
+            revertedNumber = revertedNumber * 10 + number % 10 // 1
+            number /= 10 // 12
         }
 
-        val last = sb.toString()
-
-        return str.equals(last)
+        return revertedNumber == number || number == revertedNumber/10
     }
 }
