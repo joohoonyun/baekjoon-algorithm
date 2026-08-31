@@ -1,10 +1,10 @@
 # [level 2] 큰 수 만들기 - 42883 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42883) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42883?language=kotlin) 
 
 ### 성능 요약
 
-메모리: 86 MB, 시간: 21.54 ms
+메모리: 67.8 MB, 시간: 32.49 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2026년 08월 28일 22:25:53
+2026년 08월 31일 21:27:18
 
 ### 문제 설명
 
