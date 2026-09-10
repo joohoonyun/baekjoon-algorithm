@@ -2,28 +2,29 @@ import java.util.*
 
 class Solution {
     fun solution(number: String, k: Int): String {
-        var limit = k
-        val length: Int = number.length
         val stack: Deque<Char> = ArrayDeque()
+        var limit: Int = k
         
-        for (i: Int in 0 until length) {
-            while (stack.isNotEmpty() && limit > 0 && number[i] > stack.peekLast()) {
+        for (i: Int in 0 until number.length) {
+            while (limit>0 && stack.isNotEmpty() && stack.peekLast() < number[i]) {
                 stack.pollLast()
-                limit--;
+                limit--
             }
-            
             stack.addLast(number[i])
         }
         
-        while (limit > 0) {
+        
+        while (limit>0) {
             stack.pollLast()
             limit--
         }
+        
         
         val sb = StringBuilder()
         for (c in stack) {
             sb.append(c)
         }
+        
         return sb.toString()
     }
 }
