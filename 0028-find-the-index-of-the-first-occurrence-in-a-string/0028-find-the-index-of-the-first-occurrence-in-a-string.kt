@@ -13,7 +13,8 @@ class Solution {
             }
 
             if (text[i] == pattern[j]) {
-                if (j == pattern.length - 1) {
+                // 패턴 발견
+                if (j == pattern.length-1) {
                     return i - pattern.length + 1
                 }
                 j++
@@ -23,10 +24,11 @@ class Solution {
     }
 
     fun pi(pattern: String): IntArray {
-        var j: Int = 0;
-        val pi: IntArray = IntArray(pattern.length) { 0 }
-        for (i: Int in 1 until pi.size) {
-            while (j>0 && pattern[i] != pattern[j]) {
+        val length: Int = pattern.length
+        val pi = IntArray(length) { 0 }
+        var j: Int = 0
+        for (i: Int in 1 until length) {
+            while (j > 0 && pattern[i] != pattern[j]) {
                 j = pi[j-1]
             }
 
@@ -34,7 +36,7 @@ class Solution {
                 j++
                 pi[i] = j
             }
-        }
+        }        
         return pi
     }
 }
