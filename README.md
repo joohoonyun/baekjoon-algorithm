@@ -100,6 +100,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0236-lowest-common-ancestor-of-a-binary-tree](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0236-lowest-common-ancestor-of-a-binary-tree) |
 | [0257-binary-tree-paths](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0257-binary-tree-paths) |
 | [0547-number-of-provinces](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0547-number-of-provinces) |
+| [0743-network-delay-time](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0743-network-delay-time) |
 | [0744-network-delay-time](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0744-network-delay-time) |
 | [0841-keys-and-rooms](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0841-keys-and-rooms) |
 | [0871-keys-and-rooms](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0871-keys-and-rooms) |
@@ -125,6 +126,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0199-binary-tree-right-side-view](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0199-binary-tree-right-side-view) |
 | [0200-number-of-islands](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0200-number-of-islands) |
 | [0547-number-of-provinces](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0547-number-of-provinces) |
+| [0743-network-delay-time](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0743-network-delay-time) |
 | [0744-network-delay-time](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0744-network-delay-time) |
 | [0841-keys-and-rooms](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0841-keys-and-rooms) |
 | [0871-keys-and-rooms](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0871-keys-and-rooms) |
@@ -175,10 +177,12 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0215-kth-largest-element-in-an-array](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0215-kth-largest-element-in-an-array) |
+| [0743-network-delay-time](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0743-network-delay-time) |
 | [0744-network-delay-time](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0744-network-delay-time) |
 ## Shortest Path
 |  |
 | ------- |
+| [0743-network-delay-time](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0743-network-delay-time) |
 | [0744-network-delay-time](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0744-network-delay-time) |
 ## Two Pointers
 |  |
@@ -304,6 +308,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## Graph Theory
 |  |
 | ------- |
+| [0743-network-delay-time](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0743-network-delay-time) |
 | [0841-keys-and-rooms](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0841-keys-and-rooms) |
 ## Z Algorithm
 |  |
@@ -317,4 +322,8 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0028-find-the-index-of-the-first-occurrence-in-a-string](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0028-find-the-index-of-the-first-occurrence-in-a-string) |
+## Dijkstra's Algorithm
+|  |
+| ------- |
+| [0743-network-delay-time](https://github.com/juhoon212/baekjoon-algorithm/tree/master/0743-network-delay-time) |
 <!---LeetCode Topics End-->
