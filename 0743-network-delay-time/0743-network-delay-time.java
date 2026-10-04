@@ -1,71 +1,72 @@
 class Solution {
     class Node {
+        int to;
         int cost;
-        int vertex;
 
-        public Node(int cost, int vertex) {
+        public Node(int to, int cost) {
+            this.to = to;
             this.cost = cost;
-            this.vertex = vertex;
         }
     }
-    
+
     List<Node>[] graph;
     int[] visited;
 
     public int networkDelayTime(int[][] times, int n, int k) {
-        initGraph(times, n);
-        visited = new int[n+1];
-        dijkstra(times, n, k);
+        // 다익스트라
+        initGraph(n+1);
+
+        for (int i=0; i<times.length; ++i) {
+            int[] cur = times[i];
+            graph[cur[0]].add(new Node(cur[1], cur[2]));
+        }
+
+        dijsktra(k);
 
         int max = 0;
         for (int i=1; i<=n; ++i) {
             if (visited[i] == Integer.MAX_VALUE) return -1;
-
-            int current = visited[i];
-            max = Math.max(max, current);
+            max = Math.max(max, visited[i]);        
         }
+
         return max;
     }
 
-    public void initGraph(int[][] times, int n) {
-        graph = new ArrayList[n+1];
-        for (int i=0; i<n+1; ++i) {
-            graph[i] = new ArrayList<>();
-        }
+    public void dijsktra(int start) {
+        PriorityQueue<Node> pq = new PriorityQueue<>(Comparator.comparingInt(i -> i.cost));
+        pq.offer(new Node(start, 0));
 
-        for (int i=0; i<times.length; ++i) {
-            int[] current = times[i];
-            int from = current[0];
-            int to = current[1];
-            int cost = current[2];
+        visited[start] = 0;
 
-            graph[from].add(new Node(cost, to));
+        while (!pq.isEmpty()) {
+            Node current = pq.poll();
+
+            int curCost = current.cost;
+            int curVertex = current.to;
+
+            if (curCost > visited[curVertex]) continue;
+
+            for (Node next : graph[curVertex]) {
+                int nextVertex = next.to;
+                int nextCost = next.cost;
+
+                int sumCost = curCost + nextCost;
+
+                if (sumCost < visited[nextVertex]) {
+                    visited[nextVertex] = sumCost;
+                    pq.offer(new Node(nextVertex, sumCost));
+                }
+            }
         }
     }
 
-    public void dijkstra(int[][] times, int n, int k) {
-        PriorityQueue<Node> pq = new PriorityQueue<>(Comparator.comparingInt(i -> i.cost));
-        pq.offer(new Node(0, k));
-        
+    private void initGraph(int size) {
+        graph = new ArrayList[size];
+        visited = new int[size];
         Arrays.fill(visited, Integer.MAX_VALUE);
-        visited[k] = 0;
 
-        while (!pq.isEmpty()) {
-            Node now = pq.poll();
-            int currentCost = now.cost;
-            int currentVertex = now.vertex;
-
-            if (currentCost > visited[currentVertex]) continue;
-            for (Node next : graph[currentVertex]) { // k = start
-                int nextCost = next.cost;
-                int nextVertex = next.vertex;
-
-                int sumCost = nextCost + currentCost;
-                if (sumCost < visited[nextVertex]) {
-                    visited[nextVertex] = sumCost;
-                    pq.offer(new Node(sumCost, nextVertex));
-                }
-            }
-        }       
+        for (int i=0; i<size; ++i) {
+            graph[i] = new ArrayList<Node>();
+        }
     }
 }
