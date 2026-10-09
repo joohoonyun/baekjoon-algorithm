@@ -3,15 +3,15 @@ class Solution {
         quickSort(0, nums.size-1, nums)
     }
 
-    fun quickSort(start: Int, end: Int, nums: IntArray): Unit {
-        if (start > end) return
-        val pivot: Int = getPartition(start, end, nums)
+    fun quickSort(start: Int, end: Int, nums: IntArray) {
+        if (start >= end) return
+        var pivot = partition(start, end, nums)
 
         quickSort(start, pivot-1, nums)
         quickSort(pivot+1, end, nums)
     }
 
-    fun getPartition(start: Int, end: Int, nums: IntArray): Int {
+    fun partition(start: Int, end: Int, nums: IntArray): Int {
         val pivot = nums[end]
         var smallerIdx = start
 
@@ -21,13 +21,12 @@ class Solution {
                 smallerIdx++
             }
         }
-
         swap(smallerIdx, end, nums)
-        return smallerIdx    
+        return smallerIdx
     }
 
-    fun swap(a: Int, b: Int, nums: IntArray): Unit {
-        var temp: Int = nums[a]
+    fun swap(a: Int, b: Int, nums: IntArray) {
+        var temp = nums[a]
         nums[a] = nums[b]
         nums[b] = temp
     }
