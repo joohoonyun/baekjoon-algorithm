@@ -1,30 +1,23 @@
 class Solution {
     fun combine(n: Int, k: Int): List<List<Int>> {
-        // 4 C 2
         val result: MutableList<List<Int>> = mutableListOf<List<Int>>()
-        val current: MutableList<Int> = mutableListOf<Int>()
+        val now: MutableList<Int> = mutableListOf<Int>()
 
-        backTracking(1, n, k, current, result)
+        // 4C2
+        combinations(1, n, k, result, now)
         return result
     }
 
-    fun backTracking(
-            start: Int, 
-            n: Int, 
-            k: Int, 
-            current: MutableList<Int>, 
-            result: MutableList<List<Int>>
-        ) {
-
+    fun combinations(start: Int, n: Int, k: Int, result: MutableList<List<Int>>, current: MutableList<Int>) {
         if (current.size == k) {
             result.add(current.toList())
-            return 
+            return
         }
 
         for (i in start .. n) {
             current.add(i)
-            backTracking(i+1, n, k, current, result)
+            combinations(i+1, n, k, result, current)
             current.removeAt(current.lastIndex)
-        }    
+        }
     }
 }
